@@ -1,0 +1,11 @@
+p{
+    color:red
+}
+
+.available{
+    background-color:green;
+}
+
+.not-available{
+    background-color:red;
+}

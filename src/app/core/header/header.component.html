@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li> <a routerLink="/movies">Movies</a></li>
+        <div *ngIf="!userLoggedIn">
+            <li><a routerLink="/register">Register</a></li>
+            <li><a routerLink="/login">Login</a></li>
+        </div>
+       
+        <div *ngIf="userLoggedIn"> <li><a routerLink="/login"  (click)="logout()">Logout</a></li></div>
+       
+     
+    </ul>
+</nav>
