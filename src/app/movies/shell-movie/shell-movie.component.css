@@ -1,0 +1,13 @@
+.shell-movie{
+    display:grid;
+    grid-template-columns: 400px 1000px;
+    grid-gap:50px;
+}
+
+.section-one,.section-two{
+    border:solid 1px black;
+}
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,66 @@
+<form [formGroup]="movieForm" (ngSubmit)="createMovie()">
+ 
+    <div class="form-group">
+                <label for="exampleInputmovieid">Movieid</label>
+                <input type="text" class="form-control" id="exampleInputmovieid" aria-describedby="NameHelp" formControlName="movieid">
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleInputdirector">Director</label>
+          <input type="text" class="form-control" id="exampleInputdirector" aria-describedby="emailHelp" formControlName="director">
+          </div>
+
+        <div class="form-group">
+          <label for="exampleInputdescription">Description</label>
+          <input type="text" class="form-control" id="exampleInputdescription" formControlName="description">
+        </div>
+       
+        <div class="form-group">
+                <label for="exampleInputimage">Image url</label>
+                <input type="text" class="form-control" id="exampleInputimage" formControlName="imageurl">
+        </div>
+       
+        <div class="form-group">
+                <label for="exampleInputmpaa">MPAA</label>
+                <input type="text" class="form-control" id="exampleInputmpaa" aria-describedby="NameHelp" formControlName="mpaa">
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleInputreleaseDate">ReleaseDate</label>
+          <input type="text" class="form-control" id="exampleInputreleaseDate" aria-describedby="emailHelp" formControlName="releaseDate">
+          </div>
+          
+        <div class="form-group">
+          <label for="exampleInputtitle">Title</label>
+          <input type="text" class="form-control" id="exampleInputtitle" formControlName="title">
+        </div>
+       
+        <div class="form-group">
+                <label for="exampleInputprice">Price</label>
+                <input type="text" class="form-control" id="exampleInputprice" formControlName="price">
+        </div>
+              
+        <div class="form-group">
+                <label for="exampleInputstarRating">StarRating</label>
+                <input type="text" class="form-control" id="exampleInputstarRating" aria-describedby="NameHelp" formControlName="starRating">
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleInputapprovalRating">Approval Rating</label>
+          <input type="text" class="form-control" id="exampleInputapprovalRating" aria-describedby="emailHelp" formControlName="approvalRating">
+          </div>
+          
+        <div class="form-group">
+          <label for="exampleInputCategory">Category</label>
+          <input type="text" class="form-control" id="exampleInputCategory" formControlName="category">
+        </div>
+       
+        <div class="form-group">
+                <label for="exampleTags">Tags</label>
+                <input type="text" class="form-control" id="exampleTags" formControlName="tags">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Movie</button>
+    </form>
+    
+    
