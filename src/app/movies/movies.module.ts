@@ -8,9 +8,10 @@ import {MoviesRoutingModule}  from './movies.routing.module';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 @NgModule({
-  declarations: [ShellMovieComponent, CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent],
+  declarations: [ShellMovieComponent, CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent,EditMovieComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -18,6 +19,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports:[ShellMovieComponent,CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent]
+  exports:[ShellMovieComponent,CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent,EditMovieComponent]
 })
 export class MoviesModule { }

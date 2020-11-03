@@ -15,7 +15,7 @@
             <td>{{item.director}}</td>
             <td>{{item.category}}</td>
             <td>{{item.price}}</td>
-            <td><button>Edit</button></td>
+            <td><button (click)="edit(item.movieid)">Edit</button></td>
             <td><button (click)="del(item.movieid)">Delete</button></td>
         </tr>
     

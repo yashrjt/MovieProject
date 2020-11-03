@@ -1,1 +1,14 @@
-<p>search-movie works!</p>
+<form [formGroup]="searchForm">
+<div class="input-group flex-nowrap">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="addon-wrapping">@</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter movie name" aria-label="Username" formControlName="searchData">
+  </div>
+</form>
+
+
+<ng-container  *ngFor="let item of searchResults">
+    <p>{{item.title}}</p>
+</ng-container>
+ 

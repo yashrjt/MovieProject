@@ -12,7 +12,7 @@ export class JwtService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler){
   const token=localStorage.getItem('token');
 
-  console.log("JwtService -> intercept -> req", req)
+ 
 
     if(!!token){
      let clonedreq=req.clone({

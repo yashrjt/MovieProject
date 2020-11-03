@@ -17,18 +17,18 @@ export class CreateMovieComponent implements OnInit {
 
   ngOnInit() {
     this.movieForm=this.fb.group({
-        "movieid": 7,
-        "director": "abc",
-        "description": "Gandalf and Aragorn lead the World of Men against Sauron\"s army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
-        "imageurl": "https://www.movieposter.com/posters/archive/main/17/MPW-8715",
-        "mpaa": "pg-13",
-        "releaseDate": "2003-12-15",
-        "title": "The Lord of the Rings: The Return of the King",
-        "price": 15.95,
-        "starRating": 4.5,
-        "approvalRating": 0.9895,
-        "category": "action",
-        "tags": ""
+        "movieid": [''],
+        "director": [''],
+        "description": [''],
+        "imageurl": [''],
+        "mpaa": [''],
+        "releaseDate": [''],
+        "title": [''],
+        "price": [''],
+        "starRating": [''],
+        "approvalRating": [''],
+        "category": [''],
+        "tags": ['']
     })
   }
 

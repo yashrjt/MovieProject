@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GetmoviesService}  from '../services/getmovies.service';
 import { Movie } from '../movie';
 import { DeletemovieService } from '../services/deletemovie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-movie',
@@ -10,7 +11,7 @@ import { DeletemovieService } from '../services/deletemovie.service';
 })
 export class DisplayMovieComponent implements OnInit {
 
-  constructor(private getMovie:GetmoviesService,private d:DeletemovieService) { }
+  constructor(private getMovie:GetmoviesService,private d:DeletemovieService,private router:Router) { }
 
   movieList:Array<Movie>;
 
@@ -38,6 +39,10 @@ export class DisplayMovieComponent implements OnInit {
     console.log("DisplayMovieComponent -> del -> err", err)
       
     })
+  }
+
+  edit(movieid){
+    this.router.navigate([`/movies/edit-movie/${movieid}`]);
   }
 
 }
