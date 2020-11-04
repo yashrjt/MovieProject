@@ -9,9 +9,10 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
+import { ListMovieComponent } from './list-movie/list-movie.component';
 
 @NgModule({
-  declarations: [ShellMovieComponent, CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent,EditMovieComponent],
+  declarations: [ShellMovieComponent,ListMovieComponent, CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent,EditMovieComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -19,6 +20,6 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports:[ShellMovieComponent,CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent,EditMovieComponent]
+  exports:[ShellMovieComponent,ListMovieComponent,CreateMovieComponent,SearchMovieComponent,DisplayMovieComponent,EditMovieComponent]
 })
 export class MoviesModule { }

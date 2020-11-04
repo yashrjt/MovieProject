@@ -27,7 +27,7 @@
     
         <div class="form-group">
           <label for="exampleInputreleaseDate">ReleaseDate</label>
-          <input type="text" class="form-control" id="exampleInputreleaseDate" aria-describedby="emailHelp" formControlName="releaseDate">
+          <input type="text" class="form-control" id="exampleInputreleaseDate" aria-describedby="emailHelp" [value]="movieForm.get('releaseDate').value | date" formControlName="releaseDate">
           </div>
           
         <div class="form-group">

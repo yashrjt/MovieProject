@@ -31,8 +31,9 @@ export class DisplayMovieComponent implements OnInit {
     })
   }
 
-  del(movieid){
-    this.d.deleteMovie(movieid).subscribe((res)=>{
+  del($event){
+  
+    this.d.deleteMovie($event).subscribe((res)=>{
     console.log("DisplayMovieComponent -> del -> res", res)
     this.getMovieList();
     },(err)=>{
@@ -41,8 +42,9 @@ export class DisplayMovieComponent implements OnInit {
     })
   }
 
-  edit(movieid){
-    this.router.navigate([`/movies/edit-movie/${movieid}`]);
+  edit($event){
+   
+    this.router.navigate([`/movies/edit-movie/${$event}`]);
   }
 
 }

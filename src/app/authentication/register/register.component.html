@@ -1,24 +1,58 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
+<!-- <form [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="form-group">
             <label for="exampleInputName">Name</label>
             <input type="text" class="form-control" id="exampleInputName" aria-describedby="NameHelp" formControlName="name">
+            <div *ngIf="registerForm.get('name').dirty && registerForm.get('name').errors?.required">
+                <span>Name cannot be empty</span>
+              
+            </div>
+            <div *ngIf="registerForm.get('name').errors?.pattern">
+                <span>Name can take only characters</span>
+          </div>
     </div>
 
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+      <div *ngIf="registerForm.get('email').dirty && registerForm.get('email').errors?.required">
+       
+      <span>Email cannot be empty</span>
       </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
-    </div>
+    
+          <div *ngIf="registerForm.get('email').errors?.email">
+            <span>Please enter a valid email</span>
+          </div>
+
+     </div>
+
+
+
+     <div formGroupName="emailGroup">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        <div *ngIf="registerForm.get('emailGroup.password').dirty && registerForm.get('emailGroup.password').errors">
+          <span>Password should contain minimum 4 characters.Minimum One number and one alphabet</span>
+        </div>
+        <div *ngIf="(registerForm.get('emailGroup.password').pristine || registerForm.get('emailGroup.password').untouched) && registerForm.get('password').errors">
+          <span>Password cannot be empty</span>
+        </div>
+      </div>
+     
+      <div class="form-group">
+              <label for="exampleInputPassword2">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword2" formControlName="passwordConfirm">
+              <div *ngIf="registerForm.get('emailGroup.passwordConfirm').dirty && registerForm.get('emailGroup.passwordConfirm').errors">
+                <span>Password should contain minimum 4 characters.Minimum One number and one alphabet</span>
+              </div>
+              <div *ngIf="(registerForm.get('emailGroup.passwordConfirm').pristine || registerForm.get('emailGroup.passwordConfirm').untouched) && registerForm.get('password').errors">
+                <span>Password cannot be empty</span>
+              </div>
+      </div>
+     </div>
    
-    <div class="form-group">
-            <label for="exampleInputPassword2">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" formControlName="passwordConfirm">
-    </div>
    
           
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
-
+ -->

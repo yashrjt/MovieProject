@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+       
+        <tr *ngFor="let item of listMovies">
+            <td>{{item.title}}</td>
+            <td>{{item.director}}</td>
+            <td>{{item.category | uppercase}}</td>
+            <td>{{item.price | currency}}</td>
+            <td><button (click)="edit(item.movieid)">Edit</button></td>
+            <td><button (click)="delete(item.movieid)">Delete</button></td>
+        </tr>
+    
+    </tbody>
+</table>

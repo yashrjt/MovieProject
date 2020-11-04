@@ -22,6 +22,7 @@ export class SearchMovieComponent implements OnInit {
         searchData:['']
       })
 
+    
     this.searchForm.get('searchData').valueChanges.subscribe((characters)=>{
    
        this.search.searchMovie(characters).subscribe((res)=>{

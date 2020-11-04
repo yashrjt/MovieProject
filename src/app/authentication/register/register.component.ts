@@ -3,11 +3,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import {RegisterService} from '../register.service';
 
+
+function emailMatcher(){
+  
+}
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
+
 export class RegisterComponent implements OnInit {
 
   registerForm:FormGroup;
@@ -19,10 +28,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
 
     this.registerForm=this.fb.group({
-      name:[''],
-      email:['',Validators.email],
-      password:[''],
-      passwordConfirm:[''],
+      name:['',[Validators.required,Validators.pattern(/^[A-Z]+$/i)]],
+      email:['',[Validators.required,Validators.email]],
+      emailGroup:this.fb.group({
+        password:['',[Validators.required,Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$")]],
+        passwordConfirm:['',[Validators.required,Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$")]],
+      },{validator:emailMatcher})
+
     })
   }
 
