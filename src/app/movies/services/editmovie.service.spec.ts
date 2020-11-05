@@ -5,8 +5,8 @@ import { EditmovieService } from './editmovie.service';
 describe('EditmovieService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-    const service: EditmovieService = TestBed.get(EditmovieService);
-    expect(service).toBeTruthy();
-  });
+  // it('should be created', () => {
+  //   const service: EditmovieService = TestBed.get(EditmovieService);
+  //   expect(service).toBeTruthy();
+  // });
 });
