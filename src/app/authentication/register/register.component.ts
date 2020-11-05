@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 import {RegisterService} from '../register.service';
 
 
-function emailMatcher(){
+function passwordMatcher(c:AbstractControl):{[key:string]:boolean}|null {
+  const pwd=c.get('password');
+  const cpwd=c.get('passwordConfirm');
+
+  if(!pwd.dirty || !cpwd.dirty){
+    return null;
+  }
+  if(pwd.value===cpwd.value){
+    return null;
+  }
   
+    return {'match':true};
+  
+ 
 }
 
 
@@ -30,12 +42,22 @@ export class RegisterComponent implements OnInit {
     this.registerForm=this.fb.group({
       name:['',[Validators.required,Validators.pattern(/^[A-Z]+$/i)]],
       email:['',[Validators.required,Validators.email]],
-      emailGroup:this.fb.group({
-        password:['',[Validators.required,Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$")]],
-        passwordConfirm:['',[Validators.required,Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$")]],
-      },{validator:emailMatcher})
+      passwordGroup:this.fb.group({
+        password:['',[Validators.required,Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)]],
+        passwordConfirm:['',[Validators.required,Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)]],
+      },{validator:passwordMatcher})
 
     })
+
+    // this.registerForm.get('passwordGroup.passwordConfirm').valueChanges.subscribe((char)=>{
+    // console.log("RegisterComponent -> ngOnInit -> char", char)
+      
+    // })
+
+    // this.registerForm.get('passwordGroup.password').valueChanges.subscribe((char)=>{
+    //   console.log("RegisterComponent -> ngOnInit -> char", char)
+        
+    //   })
   }
 
 
